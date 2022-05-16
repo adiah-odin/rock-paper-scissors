@@ -1,13 +1,13 @@
-const choices = ['Rock', 'Paper', 'Scisors'];
+const playOptions = ['Rock', 'Paper', 'Scisors'];
 
 function computerPlay() {
 	// Should choose randomly from rock, paper, scissors.
-
+	return choose(playOptions);
 }
 
 function choose(choices) {
-	var index = Math.floor(Math.random() * choices.length);
+	let index = Math.floor(Math.random() * choices.length);
 	return choices[index];
 }
 
-console.log(choose([1, 2, 3]));
+console.log(computerPlay());
