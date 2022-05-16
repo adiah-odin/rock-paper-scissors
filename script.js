@@ -1,4 +1,4 @@
-const playOptions = ['Rock', 'Paper', 'Scissors'];
+const playOptions = ['rock', 'paper', 'scissors'];
 
 function computerPlay() {
 	// Should choose randomly from rock, paper, scissors.
@@ -50,6 +50,17 @@ function playRound(playerSelection, computerSelection){
 	}
 }
 
+function getPlayerChoice() {
+	let choice;
 
+	do {
+		choice = prompt("Please enter choice: Rock, Paper, Scissors").toLowerCase();
+		if (!playOptions.includes(choice)) {
+			alert('Value is not a valid choice')
+		}
+	} while (! playOptions.includes(choice));
+	return choice;
+}
 
-console.log(playRound('rock', computerPlay().toLowerCase()));
+console.log(playRound(getPlayerChoice(), computerPlay().toLowerCase()));
+// getPlayerChoice();
