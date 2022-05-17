@@ -1,11 +1,25 @@
 const playOptions = ['rock', 'paper', 'scissors'];
 const choiceBtns = document.querySelectorAll('.choice-button');
+const replayBtn = document.getElementById('replay');
+
+const gameScreen = document.getElementById('game');
+const resultScreen = document.getElementById('winner-screen');
+
+const resultDisplay = document.getElementById('round-results');
+const playerScoreDisplay = document.getElementById('player-score');
+const computerScoreDisplay = document.getElementById('computer-score');
+
+const overallScoreDisplay = document.getElementById('scores');
+const endMessage = document.getElementById('display');
+
+let playerScore = 0;
+let computerScore = 0;
 
 choiceBtns.forEach(btn => {
 	btn.onclick = () => {
 		handleClick(btn.dataset.value);
 	}
-})
+});
 
 function computerPlay() {
 	// Should choose randomly from rock, paper, scissors.
@@ -59,6 +73,50 @@ function playRound(playerSelection, computerSelection){
 
 
 function handleClick(choice) {
-	// console.log(choice);
-	console.log(playRound(choice, computerPlay()));
+	// Use the button as user's input for playRound
+	let result = playRound(choice, computerPlay());
+	resultDisplay.innerHTML	= result;
+
+	// Check for winners of the round
+	if (result.includes('win')) {
+		playerScore++;
+	} else if (result.includes('lose')) {
+		computerScore++;
+	}
+
+	updateBoard();
+
+
+	// Check for overall winners
+	if (playerScore >= 5 || computerScore >= 5) {
+		declareWinner()
+	}
+
+}
+
+function declareWinner() {
+	// hide current scores and round results
+	overallScoreDisplay.innerHTML = `Score: ${playerScore} : ${computerScore}`;
+	endMessage.innerHTML = playerScore > computerScore ? 'You win' : 'You lose';
+	// playerScore = 0;
+	// computerScore = 0;
+
+	gameScreen.dataset.visible = 'false';
+	resultScreen.dataset.visible = 'true';
+}
+
+replayBtn.onclick = resetBoard;
+
+function resetBoard() {
+	playerScore = 0;
+	computerScore = 0;
+	resultDisplay.innerHTML = '';
+	updateBoard();
+	resultScreen.dataset.visible = 'false';
+	gameScreen.dataset.visible = 'true';
+}
+
+function updateBoard() {
+	playerScoreDisplay.innerHTML = playerScore;
+	computerScoreDisplay.innerHTML = computerScore;
 }
