@@ -57,18 +57,6 @@ function playRound(playerSelection, computerSelection){
 	}
 }
 
-function getPlayerChoice() {
-	let choice;
-
-	do {
-		choice = prompt("Please enter choice: Rock, Paper, Scissors").toLowerCase();
-		if (!playOptions.includes(choice)) {
-			alert('Value is not a valid choice')
-		}
-	} while (! playOptions.includes(choice));
-	return choice;
-}
-
 
 function handleClick(choice) {
 	// console.log(choice);
