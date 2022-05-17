@@ -1,4 +1,11 @@
 const playOptions = ['rock', 'paper', 'scissors'];
+const choiceBtns = document.querySelectorAll('.choice-button');
+
+choiceBtns.forEach(btn => {
+	btn.onclick = () => {
+		handleClick(btn.dataset.value);
+	}
+})
 
 function computerPlay() {
 	// Should choose randomly from rock, paper, scissors.
@@ -62,35 +69,8 @@ function getPlayerChoice() {
 	return choice;
 }
 
-function game() {
-	// Play five rounds and keep score
-	let computerScore = 0;
-	let playerScore = 0;
 
-	for (let i = 0; i< 5; i++) {
-		// console.log(playRound(getPlayerChoice(), computerPlay()));
-		let result = playRound(getPlayerChoice(), computerPlay());
-		console.log(result);
-		if (result.includes('win')) {
-			playerScore++;
-		} else if (result.includes('lose')) {
-			computerScore++;
-		}
-	}
-
-	if (playerScore > computerScore) {
-		console.log('Player Wins');
-	} else if (computerScore > playerScore) {
-		console.log('Computer wins');
-	} else {
-		console.log("Game tie");
-	}
-
-	console.log(`Computer score: ${computerScore}`);
-	console.log(`Player Score: ${playerScore}`);
-
+function handleClick(choice) {
+	// console.log(choice);
+	console.log(playRound(choice, computerPlay()));
 }
-
-game();
-
-// getPlayerChoice();
