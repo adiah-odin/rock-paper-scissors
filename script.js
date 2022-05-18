@@ -1,11 +1,15 @@
 const playOptions = ['rock', 'paper', 'scissors'];
 const choiceBtns = document.querySelectorAll('.choices__button');
+const nextRoundBtn = document.getElementById('next-round');
 const replayBtn = document.getElementById('replay');
 
+// Screen sections visible at different points during gameplay.
 const gameScreen = document.getElementById('game');
+const playScreen = document.getElementById('choices-wrapper');
+const roundResultScreen = document.getElementById('round-results');
 const resultScreen = document.getElementById('winner-screen');
 
-const resultDisplay = document.getElementById('round-results');
+const resultDisplay = document.getElementById('result-text');
 const playerScoreDisplay = document.getElementById('player-score');
 const computerScoreDisplay = document.getElementById('computer-score');
 
@@ -38,33 +42,33 @@ function playRound(playerSelection, computerSelection){
 		case 'rock':
 			switch (computerSelection) {
 				case 'rock':
-					return "It's a tie!";
+					return "It's a tie";
 				case 'paper': 
-					return "You lose! Paper beats Rock";
+					return "You lose";
 				case 'scissors':
-					return "You win! Rock beats Scissors";
+					return "You win";
 				default:
 					return "Something went wrong";
 			};
 		case 'paper':
 			switch (computerSelection) {
 				case 'rock':
-					return "You win! Paper beats Rock";
+					return "You win";
 				case 'paper': 
-					return "It's a tie!";
+					return "It's a tie";
 				case 'scissors':
-					return "You lose! Scissors beats Paper";
+					return "You lose";
 				default:
 					return "Something went wrong";
 			};
 		case 'scissors':
 			switch (computerSelection) {
 				case 'rock':
-					return "You lose! Rock beats Scissors";
+					return "You lose";
 				case 'paper': 
-					return "You win! Scissors beats Paper";
+					return "You win";
 				case 'scissors':
-					return "It's a tie!";
+					return "It's a tie";
 				default:
 					return "Something went wrong";
 			};
@@ -77,7 +81,20 @@ function handleClick(choice) {
 	let computerChoice = computerPlay();
 	let result = playRound(choice, computerChoice);
 
+	playScreen.dataset.visible = 'false';
+
 	resultDisplay.innerHTML	= result;
+
+	// create the divs to show the choices 
+	const playerMove = document.createElement('div');
+	playerMove.classList.add('moves__display', `moves__display--${choice}`);
+	document.querySelector('#player-move').prepend(playerMove);
+
+	const computerMove = document.createElement('div');
+	computerMove.classList.add('moves__display', `moves__display--${computerChoice}`);
+	document.querySelector('#computer-move').prepend(computerMove);
+
+	roundResultScreen.dataset.visible = 'true';
 
 	// Check for winners of the round
 	if (result.includes('win')) {
@@ -119,8 +136,16 @@ function resetBoard() {
 }
 
 function showResults() {
-
+// create the divs in here?
 }
+
+// maybe a toggle results function
+function hideResults() {
+	roundResultScreen.dataset.visible = 'false';
+	playScreen.dataset.visible = 'true';
+}
+
+nextRoundBtn.onclick = hideResults;
 
 
 function updateBoard() {
