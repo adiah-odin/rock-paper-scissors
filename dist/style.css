@@ -180,6 +180,70 @@ div[data-visible=true] {
   background-image: url(../images/icon-rock.svg);
 }
 
+.round-results {
+  display: flex;
+  flex-direction: column;
+}
+
+.moves {
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+  margin-bottom: 4rem;
+}
+.moves > div {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  letter-spacing: 0.85px;
+  text-align: center;
+  color: #fff;
+}
+.moves .moves__display {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 15px solid red;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.moves .moves__display--rock {
+  border-color: var(--clr-rock);
+  background-image: url(../images/icon-rock.svg);
+}
+.moves .moves__display--paper {
+  border-color: var(--clr-paper);
+  background-image: url(../images/icon-paper.svg);
+}
+.moves .moves__display--scissors {
+  border-color: var(--clr-scissors);
+  background-image: url(../images/icon-scissors.svg);
+}
+
+.results {
+  width: 80%;
+  align-self: center;
+  margin-bottom: 3.125rem;
+  text-align: center;
+}
+.results__text {
+  font-size: var(--fs-800);
+  font-weight: 700;
+  color: #fff;
+}
+.results__btn {
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding-block: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
 .rules-btn {
   text-transform: uppercase;
   color: #fff;
