@@ -4,6 +4,9 @@
   --clr-text-dark: hsl(229, 25%, 31%);
   --clr-text-score: hsl(229, 64%, 46%);
   --clr-gray: hsl(217, 16%, 45%);
+  --clr-rock: hsl(349, 71%, 52%);
+  --clr-paper: hsl(230, 89%, 62%);
+  --clr-scissors: hsl(39, 89%, 49%);
   --ff-sans: "Barlow Semi Condensed", sans-serif;
   --fs-300: 0.625rem;
   --fs-400: 1rem;
@@ -94,6 +97,9 @@ div[data-visible=true] {
   background: radial-gradient(circle at top, hsl(214deg, 47%, 23%), hsl(237deg, 49%, 15%));
   min-height: 100vh;
   padding: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .current-scores {
@@ -103,6 +109,7 @@ div[data-visible=true] {
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem;
+  margin-bottom: 6.5rem;
 }
 
 .logo {
@@ -129,6 +136,47 @@ div[data-visible=true] {
   font-weight: 700;
   font-size: var(--fs-700);
   line-height: 1;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  row-gap: 1rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  grid-template-areas: "paper scissors" "rock rock";
+  background-image: url(../images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  margin-bottom: 8.75rem;
+}
+.choices__button {
+  border-radius: 50%;
+  border: 15px solid;
+  width: 100%;
+  aspect-ratio: 1;
+  background-repeat: no-repeat;
+  background-size: 45%;
+  background-position: center;
+}
+.choices__button--paper {
+  grid-area: paper;
+  border-color: var(--clr-paper);
+  background-image: url(../images/icon-paper.svg);
+}
+.choices__button--scissors {
+  grid-area: scissors;
+  border-color: var(--clr-scissors);
+  background-image: url(../images/icon-scissors.svg);
+}
+.choices__button--rock {
+  grid-area: rock;
+  width: calc(50% - 1rem);
+  border-color: var(--clr-rock);
+  background-image: url(../images/icon-rock.svg);
 }
 
 .sr-only {

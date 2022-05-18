@@ -2,6 +2,9 @@
 	background: radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 	min-height: 100vh;
 	padding: 1.875rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .current-scores {
@@ -11,6 +14,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	padding: 0.875rem;
+	margin-bottom: 6.5rem;
 }
 
 .logo {
@@ -40,5 +44,55 @@
 		font-weight: 700;
 		font-size: var(--fs-700);
 		line-height: 1;
+	}
+}
+
+.choices {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	justify-items: center;
+	row-gap: 1rem;
+	column-gap: 2rem;
+	grid-template-areas: 
+		'paper scissors'
+		'rock rock';
+	background-image: url(../images/bg-triangle.svg);
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+	margin-bottom: 8.75rem;
+	
+
+	&__button {
+		border-radius: 50%;
+		border: 15px solid;
+		width: 100%;
+		aspect-ratio: 1;
+		background-repeat: no-repeat;
+		background-size: 45%;
+		background-position: center;
+
+		&--paper {
+			grid-area: paper;
+			border-color: var(--clr-paper);
+			background-image: url(../images/icon-paper.svg);
+
+		}
+	
+		&--scissors {
+			grid-area: scissors;
+			border-color: var(--clr-scissors);
+			background-image: url(../images/icon-scissors.svg);
+		}
+	
+		&--rock {
+			grid-area: rock;
+			// subtract half of the column gap to have the same width
+			width: calc(50% - 1rem);
+			border-color: var(--clr-rock);
+			background-image: url(../images/icon-rock.svg);
+		}
+
 	}
 }

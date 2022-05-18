@@ -25,16 +25,18 @@
 				</div>
 			</div>
 
-			<div class="choice-container" data-visible="true">
-				<button class="choice-button" id="scissors" data-value="scissors">Scissors</button>
-				<button class="choice-button" id="paper" data-value="paper">Paper</button>
-				<button class="choice-button" id="rock" data-value="rock">Rock</button>
+			<div data-visible="true">
+				<div class="choices">
+					<button class="choices__button choices__button--paper" id="paper" data-value="paper"><span class="sr-only">Paper</span></button>
+					<button class="choices__button choices__button--scissors" id="scissors" data-value="scissors"><span class="sr-only">Scissors</span></button>
+					<button class="choices__button choices__button--rock" id="rock" data-value="rock"><span class="sr-only">Rock</span></button>
+				</div>
 			</div>
 		
-			<div id="round-results" data-visible="true">
-				<div class="choices">
-					<div id="player-choice"></div>
-					<div id="computer-choice"></div>
+			<div id="round-results" data-visible="false">
+				<div class="moves">
+					<div id="player-move"></div>
+					<div id="computer-move"></div>
 				</div>
 
 				<div id="results">

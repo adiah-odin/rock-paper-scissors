@@ -1,5 +1,5 @@
 const playOptions = ['rock', 'paper', 'scissors'];
-const choiceBtns = document.querySelectorAll('.choice-button');
+const choiceBtns = document.querySelectorAll('.choices__button');
 const replayBtn = document.getElementById('replay');
 
 const gameScreen = document.getElementById('game');
