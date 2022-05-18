@@ -33,9 +33,12 @@
 
 	&__label {
 		color: var(--clr-text-score);
+		font-size: var(--fs-300);
 	}
 
 	&__value {
 		font-weight: 700;
+		font-size: var(--fs-700);
+		line-height: 1;
 	}
 }
