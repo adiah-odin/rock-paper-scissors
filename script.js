@@ -122,9 +122,12 @@ function handleClick(choice) {
 
 
 	// Check for overall winners
-	if (playerScore >= 5 || computerScore >= 5) {
-		declareWinner()
-	}
+	// set a timeout
+	setTimeout(() => {
+		if (playerScore >= 2 || computerScore >= 2) {
+			declareWinner()
+		}
+	}, 2000)
 
 }
 
