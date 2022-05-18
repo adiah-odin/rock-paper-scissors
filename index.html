@@ -9,17 +9,37 @@
 </head>
 <body>
 	<div id="game" data-visible="true">
-		<button class="choice-button" id="scissors" data-value="scissors">Scissors</button>
-		<button class="choice-button" id="paper" data-value="paper">Paper</button>
-		<button class="choice-button" id="rock" data-value="rock">Rock</button>
-	
-		<div id="round-results">
-	
-		</div>
 		<div id="current-scores">
-			<div id="player-score">0</div>
-			<div id="computer-score">0</div>
+			<img src="" alt="" class="logo">
+			<div id="score-wrapper">
+				<p>score</p>
+				<p id="player-score">0</p>
+			</div>
+			<div id="score-wrapper">
+				<p>score</p>
+				<p id="computer-score">0</p>
+			</div>
 		</div>
+
+		<div class="choice-container" data-visible="true">
+			<button class="choice-button" id="scissors" data-value="scissors">Scissors</button>
+			<button class="choice-button" id="paper" data-value="paper">Paper</button>
+			<button class="choice-button" id="rock" data-value="rock">Rock</button>
+		</div>
+	
+		<div id="round-results" data-visible="true">
+			<div class="choices">
+				<div id="player-choice"></div>
+				<div id="computer-choice"></div>
+			</div>
+
+			<div id="results">
+				<div id="result-text"></div>
+				<button id="next-round">Play Again</button>
+			</div>
+
+		</div>
+
 	</div>
 	<div id="winner-screen" data-visible="false">
 		<div id="scores"></div>
