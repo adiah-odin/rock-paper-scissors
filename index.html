@@ -10,44 +10,47 @@
 	<link rel="stylesheet" href="dist/style.css">
 </head>
 <body>
-	<div id="game" data-visible="true">
-		<div id="current-scores">
-			<img src="" alt="" class="logo">
-			<div id="score-wrapper">
-				<p>score</p>
-				<p id="player-score">0</p>
+	<main class="game-wrapper">
+
+		<div id="game" data-visible="true">
+			<div class="current-scores">
+				<img src="images/logo.svg" alt="" class="logo">
+				<div class="score-wrapper">
+					<p class="score-wrapper__label">Player</p>
+					<p class="score-wrapper__value" id="player-score">0</p>
+				</div>
+				<div class="score-wrapper">
+					<p class="score-wrapper__label">Computer</p>
+					<p class="score-wrapper__value" id="computer-score">0</p>
+				</div>
 			</div>
-			<div id="score-wrapper">
-				<p>score</p>
-				<p id="computer-score">0</p>
+
+			<div class="choice-container" data-visible="true">
+				<button class="choice-button" id="scissors" data-value="scissors">Scissors</button>
+				<button class="choice-button" id="paper" data-value="paper">Paper</button>
+				<button class="choice-button" id="rock" data-value="rock">Rock</button>
 			</div>
+		
+			<div id="round-results" data-visible="true">
+				<div class="choices">
+					<div id="player-choice"></div>
+					<div id="computer-choice"></div>
+				</div>
+
+				<div id="results">
+					<div id="result-text"></div>
+					<button id="next-round">Play Again</button>
+				</div>
+			</div>
+
 		</div>
-
-		<div class="choice-container" data-visible="true">
-			<button class="choice-button" id="scissors" data-value="scissors">Scissors</button>
-			<button class="choice-button" id="paper" data-value="paper">Paper</button>
-			<button class="choice-button" id="rock" data-value="rock">Rock</button>
+		<div id="winner-screen" data-visible="false">
+			<div id="scores"></div>
+			<div id="display"></div>
+			<button id="replay">Replay</button>
 		</div>
-	
-		<div id="round-results" data-visible="true">
-			<div class="choices">
-				<div id="player-choice"></div>
-				<div id="computer-choice"></div>
-			</div>
-
-			<div id="results">
-				<div id="result-text"></div>
-				<button id="next-round">Play Again</button>
-			</div>
-
-		</div>
-
-	</div>
-	<div id="winner-screen" data-visible="false">
-		<div id="scores"></div>
-		<div id="display"></div>
-		<button id="replay">Replay</button>
-	</div>
+		<button id="rules">rules</button>
+	</main>
 	
 	<script src="script.js"></script>
 </body>

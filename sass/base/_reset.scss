@@ -35,6 +35,7 @@ p {
 body {
 	font-family: var(--ff-sans);
 	font-size: var(--fs-400);
+	text-transform: uppercase;
 	font-weight: 600;
 	background-color: var(--clr-light);
 	color: var(--clr-text-dark);
@@ -62,6 +63,15 @@ button,
 textarea,
 select {
 	font: inherit;
+}
+
+// make it possible to hide sections by updating attribute in js
+div[data-visible='false'] {
+	display: none;
+}
+
+div[data-visible='true'] {
+	display: block;
 }
 
 // Remove animations for people who've turned them off

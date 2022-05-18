@@ -54,6 +54,7 @@ p {
 body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
+  text-transform: uppercase;
   font-weight: 600;
   background-color: var(--clr-light);
   color: var(--clr-text-dark);
@@ -78,6 +79,14 @@ select {
   font: inherit;
 }
 
+div[data-visible=false] {
+  display: none;
+}
+
+div[data-visible=true] {
+  display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
 *::before,
@@ -90,6 +99,44 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.game-wrapper {
+  background: radial-gradient(circle at top, hsl(214deg, 47%, 23%), hsl(237deg, 49%, 15%));
+  min-height: 100vh;
+  padding: 1.875rem;
+}
+
+.current-scores {
+  border: 3px solid #606E85;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem;
+}
+
+.logo {
+  width: 30%;
+}
+
+.score-wrapper {
+  background-color: #fff;
+  width: 30%;
+  padding-block: 0.625rem;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.score-wrapper:first-of-type {
+  margin-left: auto;
+}
+.score-wrapper__label {
+  color: var(--clr-text-score);
+}
+.score-wrapper__value {
+  font-weight: 700;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
