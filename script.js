@@ -143,6 +143,12 @@ function showResults() {
 function hideResults() {
 	roundResultScreen.dataset.visible = 'false';
 	playScreen.dataset.visible = 'true';
+
+	const moves = document.querySelectorAll('.moves__display');
+
+	moves.forEach(move => {
+		move.remove();
+	})
 }
 
 nextRoundBtn.onclick = hideResults;
