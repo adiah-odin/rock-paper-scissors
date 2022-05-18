@@ -189,7 +189,7 @@ div[data-visible=true] {
   display: flex;
   justify-content: space-between;
   gap: 10%;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .moves > div {
   width: 45%;
@@ -209,6 +209,13 @@ div[data-visible=true] {
   background-color: white;
   background-repeat: no-repeat;
   background-position: center;
+  opacity: 0;
+  transform: scale(0.25);
+  transition: transform 300ms ease-in-out, opacity 400ms ease-in-out;
+}
+.moves .moves__display.appear {
+  opacity: 1;
+  transform: scale(1);
 }
 .moves .moves__display--rock {
   border-color: var(--clr-rock);
@@ -228,6 +235,13 @@ div[data-visible=true] {
   align-self: center;
   margin-bottom: 3.125rem;
   text-align: center;
+  opacity: 0;
+  transform: scale(0.25);
+  transition: transform 300ms ease-in-out, opacity 400ms ease-in-out;
+}
+.results.appear {
+  opacity: 1;
+  transform: scale(1);
 }
 .results__text {
   font-size: var(--fs-800);

@@ -9,6 +9,7 @@ const playScreen = document.getElementById('choices-wrapper');
 const roundResultScreen = document.getElementById('round-results');
 const resultScreen = document.getElementById('winner-screen');
 
+const resultWrapper = document.getElementById('results');
 const resultDisplay = document.getElementById('result-text');
 const playerScoreDisplay = document.getElementById('player-score');
 const computerScoreDisplay = document.getElementById('computer-score');
@@ -91,8 +92,21 @@ function handleClick(choice) {
 	document.querySelector('#player-move').prepend(playerMove);
 
 	const computerMove = document.createElement('div');
-	computerMove.classList.add('moves__display', `moves__display--${computerChoice}`);
+	computerMove.classList.add('moves__display', `moves__display--${computerChoice}`, 'moves__display--computer');
 	document.querySelector('#computer-move').prepend(computerMove);
+
+	// Set a timeout to bring in the opacity
+	setTimeout(() => {
+		playerMove.classList.add('appear');
+	})
+
+	setTimeout(() => {
+		computerMove.classList.add('appear');
+	}, 400)
+
+	setTimeout(() => {
+		resultWrapper.classList.add('appear');
+	}, 800)
 
 	roundResultScreen.dataset.visible = 'true';
 
@@ -103,7 +117,8 @@ function handleClick(choice) {
 		computerScore++;
 	}
 
-	updateBoard();
+	setTimeout(updateBoard, 1400)
+	// updateBoard();
 
 
 	// Check for overall winners

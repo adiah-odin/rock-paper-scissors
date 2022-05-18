@@ -107,7 +107,7 @@
 	display: flex;
 	justify-content: space-between;
 	gap: 10%;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 
 	& > div {
 		// the divs that holds the player move and computer move
@@ -129,6 +129,14 @@
 		background-color: white;
 		background-repeat: no-repeat;
 		background-position: center;
+		opacity: 0;
+		transform: scale(0.25);
+		transition: transform 300ms ease-in-out, opacity 400ms ease-in-out;
+
+		&.appear {
+			opacity: 1;
+			transform: scale(1);
+		}
 		
 		&--rock {
 			border-color: var(--clr-rock);
@@ -152,6 +160,15 @@
 	align-self: center;
 	margin-bottom: 3.125rem;
 	text-align: center;
+
+	opacity: 0;
+	transform: scale(0.25);
+	transition: transform 300ms ease-in-out, opacity 400ms ease-in-out;
+
+	&.appear {
+		opacity: 1;
+		transform: scale(1);
+	}
 
 	&__text {
 		font-size: var(--fs-800);
