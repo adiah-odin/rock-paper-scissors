@@ -4,11 +4,16 @@
 
 	// colors
 	--clr-dark: hsl(0, 0%, 8%);
-	--clr-gray: hsl(0, 0%, 41%);
+	// --clr-gray: hsl(0, 0%, 41%);
 	--clr-light: hsl(0, 0%, 98%);
 
+	--clr-text-dark: hsl(229, 25%, 31%);
+	--clr-text-score: hsl(229, 64%, 46%);
+	--clr-gray: hsl(217, 16%, 45%);
+
+
 	// font-families
-	--ff-sans: 'Epilogue', sans-serif;
+	--ff-sans: 'Barlow Semi Condensed', sans-serif;
 
 	// font-sizes from ../abstract/type
 	// Might need to add more breakpoints

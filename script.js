@@ -74,7 +74,9 @@ function playRound(playerSelection, computerSelection){
 
 function handleClick(choice) {
 	// Use the button as user's input for playRound
-	let result = playRound(choice, computerPlay());
+	let computerChoice = computerPlay();
+	let result = playRound(choice, computerChoice);
+
 	resultDisplay.innerHTML	= result;
 
 	// Check for winners of the round
@@ -115,6 +117,11 @@ function resetBoard() {
 	resultScreen.dataset.visible = 'false';
 	gameScreen.dataset.visible = 'true';
 }
+
+function showResults() {
+
+}
+
 
 function updateBoard() {
 	playerScoreDisplay.innerHTML = playerScore;
