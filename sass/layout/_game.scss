@@ -195,6 +195,35 @@
 	}
 }
 
+.winner-screen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 25vh;
+	color: #fff;
+	font-weight: 700;
+
+	&__scores {
+		font-size: var(--fs-900);
+	}
+
+	&__display {
+		font-size: var(--fs-800);
+	}
+
+	&__replay {
+		background: transparent;
+		padding-block: 0.5rem;
+		width: 40%;
+		margin-top: 1rem;
+		color: #fff;
+		text-transform: uppercase;
+		border-radius: 0.5rem;
+		border: 2px solid var(--clr-gray);
+	}
+}
+
 .rules-btn {
 	text-transform: uppercase;
 	color: #fff;

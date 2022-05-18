@@ -124,7 +124,7 @@ function handleClick(choice) {
 	// Check for overall winners
 	// set a timeout
 	setTimeout(() => {
-		if (playerScore >= 2 || computerScore >= 2) {
+		if (playerScore >= 5 || computerScore >= 5) {
 			declareWinner()
 		}
 	}, 2000)
@@ -133,8 +133,8 @@ function handleClick(choice) {
 
 function declareWinner() {
 	// hide current scores and round results
-	overallScoreDisplay.innerHTML = `Score: ${playerScore} : ${computerScore}`;
-	endMessage.innerHTML = playerScore > computerScore ? 'You win' : 'You lose';
+	overallScoreDisplay.innerHTML = `${playerScore} : ${computerScore}`;
+	endMessage.innerHTML = playerScore > computerScore ? 'You win!' : 'You lose!';
 	// playerScore = 0;
 	// computerScore = 0;
 
