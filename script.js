@@ -150,6 +150,7 @@ function resetBoard() {
 	resultDisplay.innerHTML = '';
 	updateBoard();
 	resultScreen.dataset.visible = 'false';
+	hideResults();
 	gameScreen.dataset.visible = 'true';
 }
 

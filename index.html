@@ -13,46 +13,47 @@
 	<main class="game-wrapper">
 
 		<div id="game" data-visible="true">
-			<div class="current-scores">
-				<img src="images/logo.svg" alt="" class="logo">
-				<div class="score-wrapper">
-					<p class="score-wrapper__label">Player</p>
-					<p class="score-wrapper__value" id="player-score">0</p>
+			<div class="game">
+				<div class="current-scores">
+					<img src="images/logo.svg" alt="" class="logo">
+					<div class="score-wrapper">
+						<p class="score-wrapper__label">Player</p>
+						<p class="score-wrapper__value" id="player-score">0</p>
+					</div>
+					<div class="score-wrapper">
+						<p class="score-wrapper__label">Computer</p>
+						<p class="score-wrapper__value" id="computer-score">0</p>
+					</div>
 				</div>
-				<div class="score-wrapper">
-					<p class="score-wrapper__label">Computer</p>
-					<p class="score-wrapper__value" id="computer-score">0</p>
-				</div>
-			</div>
 
-			<div id="choices-wrapper" data-visible="true">
-				<div class="choices">
-					<button class="choices__button choices__button--paper" id="paper" data-value="paper"><span class="sr-only">Paper</span></button>
-					<button class="choices__button choices__button--scissors" id="scissors" data-value="scissors"><span class="sr-only">Scissors</span></button>
-					<button class="choices__button choices__button--rock" id="rock" data-value="rock"><span class="sr-only">Rock</span></button>
+				<div id="choices-wrapper" data-visible="true">
+					<div class="choices">
+						<button class="choices__button choices__button--paper" id="paper" data-value="paper"><span class="sr-only">Paper</span></button>
+						<button class="choices__button choices__button--scissors" id="scissors" data-value="scissors"><span class="sr-only">Scissors</span></button>
+						<button class="choices__button choices__button--rock" id="rock" data-value="rock"><span class="sr-only">Rock</span></button>
+					</div>
 				</div>
-			</div>
+			
+				<div id="round-results" data-visible="false">
+					<div class="round-results">
+						<div class="moves">
+							<div id="player-move">
+								<!-- <div class="moves__display moves__display--paper"></div> -->
+								You picked
+							</div>
+							<div id="computer-move">
+								<!-- <div class="moves__display moves__display--scissors"></div> -->
+								Computer Picked
+							</div>
+						</div>
 		
-			<div id="round-results" data-visible="false">
-				<div class="round-results">
-					<div class="moves">
-						<div id="player-move">
-							<!-- <div class="moves__display moves__display--paper"></div> -->
-							You picked
+						<div class="results" id="results">
+							<div class="results__text" id="result-text">You lose</div>
+							<button class="results__btn" id="next-round">Play Again</button>
 						</div>
-						<div id="computer-move">
-							<!-- <div class="moves__display moves__display--scissors"></div> -->
-							Computer Picked
-						</div>
-					</div>
-	
-					<div class="results" id="results">
-						<div class="results__text" id="result-text">You lose</div>
-						<button class="results__btn" id="next-round">Play Again</button>
 					</div>
 				</div>
 			</div>
-
 		</div>
 		<div id="winner-screen" data-visible="false">
 			<div id="scores"></div>
