@@ -164,6 +164,7 @@ function hideResults() {
 	moves.forEach(move => {
 		move.remove();
 	})
+	resultWrapper.classList.remove('appear');
 }
 
 nextRoundBtn.onclick = hideResults;
