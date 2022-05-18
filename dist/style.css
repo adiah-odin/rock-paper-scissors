@@ -100,6 +100,7 @@ div[data-visible=true] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .current-scores {
@@ -177,6 +178,16 @@ div[data-visible=true] {
   width: calc(50% - 1rem);
   border-color: var(--clr-rock);
   background-image: url(../images/icon-rock.svg);
+}
+
+.rules-btn {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid var(--clr-gray);
+  border-radius: 10px;
+  padding-block: 0.7rem;
+  width: 40%;
 }
 
 .sr-only {
